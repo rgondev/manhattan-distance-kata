@@ -19,7 +19,7 @@ module Practice
     end
 
     def distance_in_same_row(coord_x)
-      @x - coord_x
+      (@x - coord_x).abs
     end
   end
 end
