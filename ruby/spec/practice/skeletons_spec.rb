@@ -1,9 +1,17 @@
-RSpec.describe Practice::Skeletons do
-  it "has a version number" do
-    expect(Practice::Skeletons::VERSION).not_to be nil
-  end
+require "practice/point"
+require "practice/distance"
 
-  it "does something useful" do
-    expect(false).to eq(true)
+RSpec.describe Practice::Skeletons do
+
+  it 'distance between Point and itself is zero' do
+    # Given:
+    #   A point
+    point = Practice::Point.new(x: 0, y: 0)
+    # When
+    #   Calculate distance between point and itself
+    distance = Practice::Distance.manhattanDistance(point, point)
+    # Then
+    #   Distance is zero
+    expect(distance).to eql(0)
   end
 end
