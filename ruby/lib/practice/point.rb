@@ -7,7 +7,7 @@ module Practice
 
     def distance_to(other_point)
       if other_point.equals?(@x, @y)
-        0
+        0   
       end
     end
 
