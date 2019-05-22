@@ -9,18 +9,23 @@ module Practice
       if other_point.equals?(@x, @y)
         return 0   
       end
+      xDistance = other_point.distance_in_same_row(@x)
       if other_point.same_row?(@y)
-        return other_point.distance_in_same_row(@x)
+        return xDistance
       end
+      yDistance = other_point.distance_in_same_col(@y)
       if other_point.same_col?(@x)
-        return other_point.distance_in_same_col(@y)
-      end
+        return yDistance
+      end 
       
+      [xDistance, yDistance].min
     end
-
+    
     def equals?(coord_x, coord_y)
       (@x == coord_x) && (@y == coord_y)
     end
+
+
 
     def same_row?(coord_y)
       @y==coord_y
@@ -36,6 +41,10 @@ module Practice
    
     def same_col?(coord_x)
       (@x ==coord_x)
+    end
+
+    def same_row?(coord_y)
+      @y==coord_y
     end
   end
 end
