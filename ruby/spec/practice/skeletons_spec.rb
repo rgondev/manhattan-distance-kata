@@ -14,4 +14,5 @@ RSpec.describe Practice::Skeletons do
     #   Distance is zero
     expect(distance).to eql(0)
   end
+
 end
